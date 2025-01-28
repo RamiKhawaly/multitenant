@@ -30,7 +30,7 @@ Multitenancy ensures that multiple tenants (e.g., organizations or users) can sh
 ### Key Files and Directories
 
 - **`src/main/java`**:
-  - `com.example.multitenant`: Main application code.
+  - `com.rlabs.multitenant`: Main application code.
   - `config`: Configuration files for multitenancy and JWT integration.
   - `controllers`: REST API controllers for testing and demonstration.
   - `services`: Service layer implementing the core logic.
