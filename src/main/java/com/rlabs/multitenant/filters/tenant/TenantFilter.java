@@ -1,5 +1,6 @@
-package com.rlabs.multitenant.multiTenant;
+package com.rlabs.multitenant.filters.tenant;
 
+import com.rlabs.multitenant.security.tenant.TenantContext;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

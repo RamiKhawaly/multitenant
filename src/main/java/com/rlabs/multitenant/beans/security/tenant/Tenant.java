@@ -1,4 +1,5 @@
-package com.rlabs.multitenant.beans;
+package com.rlabs.multitenant.beans.security.tenant;
+import com.rlabs.multitenant.beans.DatabaseType;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;

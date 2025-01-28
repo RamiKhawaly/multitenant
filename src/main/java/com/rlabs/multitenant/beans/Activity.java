@@ -1,5 +1,6 @@
 package com.rlabs.multitenant.beans;
 
+import com.rlabs.multitenant.beans.security.tenant.BaseMultitenancyEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -10,7 +11,7 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Activity extends BaseEntity {
+public class Activity extends BaseMultitenancyEntity {
     private String title;
     private String description;
 

@@ -1,4 +1,4 @@
-package com.rlabs.multitenant.multiTenant;
+package com.rlabs.multitenant.security.tenant;
 
 import org.hibernate.context.spi.CurrentTenantIdentifierResolver;
 import org.springframework.stereotype.Component;

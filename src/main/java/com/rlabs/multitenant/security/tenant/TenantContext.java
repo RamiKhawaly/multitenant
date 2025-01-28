@@ -1,4 +1,4 @@
-package com.rlabs.multitenant.multiTenant;
+package com.rlabs.multitenant.security.tenant;
 
 import org.springframework.stereotype.Component;
 

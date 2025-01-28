@@ -2,6 +2,7 @@ package com.rlabs.multitenant.controllers;
 
 import com.rlabs.multitenant.beans.Activity;
 import com.rlabs.multitenant.repo.ActivityRepo;
+import com.rlabs.multitenant.services.ActivityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,12 +15,12 @@ import java.util.List;
 public class ActivityController {
 
     @Autowired
-    private ActivityRepo activityRepo;
+    private ActivityService activityService;
 
     @GetMapping("/get")
     public List<Activity> getAll()
     {
-        return this.activityRepo.findAll();
+        return this.activityService.getAll();
     }
 
 }
