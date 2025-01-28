@@ -36,7 +36,7 @@ Multitenancy ensures that multiple tenants (e.g., organizations or users) can sh
   - `services`: Service layer implementing the core logic.
   - `entities`: JPA entities with `tenantId` fields.
   - `repositories`: JPA repositories for database interactions.
-- **`application.yml`**: Configuration file for database and other properties.
+- **`application.properties`**: Configuration file for database and other properties.
 - **`README.md`**: This file.
 
 ---
