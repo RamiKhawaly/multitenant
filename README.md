@@ -9,7 +9,6 @@ This repository demonstrates how to implement **row-level multitenancy** in a Sp
 - [Overview](#overview)
 - [Repository Structure](#repository-structure)
 - [Technologies Used](#technologies-used)
-- [Setup and Run](#setup-and-run)
 
 ---
 
@@ -61,10 +60,3 @@ Multitenancy ensures that multiple tenants (e.g., organizations or users) can sh
 1. Java 17 or later installed.
 2. Maven installed.
 3. A database (H2 in-memory by default; others configurable in `application.yml`).
-
-### Steps to Run
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/RamiKhawaly/multitenant.git
-   cd multitenant
