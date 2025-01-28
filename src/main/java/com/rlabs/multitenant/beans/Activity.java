@@ -15,8 +15,5 @@ public class Activity extends BaseMultitenancyEntity {
     private String title;
     private String description;
 
-    @Enumerated(EnumType.STRING)
-    private ActivityType type;
-
 }
 

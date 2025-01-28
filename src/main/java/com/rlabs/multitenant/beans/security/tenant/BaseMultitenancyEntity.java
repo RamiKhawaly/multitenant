@@ -6,6 +6,7 @@ package com.rlabs.multitenant.beans.security.tenant;
  */
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.rlabs.multitenant.beans.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
@@ -17,10 +18,7 @@ import org.hibernate.annotations.TenantId;
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
-public abstract class BaseMultitenancyEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public abstract class BaseMultitenancyEntity extends BaseEntity {
 
     @TenantId // Hibernate annotation for tenant identification
     @JsonIgnore

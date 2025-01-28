@@ -1,8 +1,10 @@
 package com.rlabs.multitenant.beans.security.tenant;
-import com.rlabs.multitenant.beans.DatabaseType;
+import com.rlabs.multitenant.beans.BaseEntity;
+import com.rlabs.multitenant.beans.User;
 import jakarta.persistence.*;
 import lombok.*;
-import lombok.experimental.Accessors;
+
+import java.util.List;
 
 // Tenant Entity for Managing Multi-Tenancy
 @Entity
@@ -11,19 +13,13 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Tenant {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Tenant extends BaseEntity {
 
     private String name;
-    private String schemaName; // Schema name for tenant-specific database
-    private String databaseUrl; // Optional: External DB connection for the tenant
+    private String domain;
 
-    @Enumerated(EnumType.STRING)
-    private DatabaseType databaseType;
+    @OneToMany(mappedBy = "tenant")
+    private List<User> user;
 
-   // @OneToMany(mappedBy = "tenant")
-   // private List<Organization> organizations = new ArrayList<>();
 }
 
