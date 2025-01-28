@@ -1,15 +1,13 @@
-# Row-Level Multitenancy Implementation in Spring Boot
+# Multitenant Implementation in Spring Boot
 
-This repository demonstrates how to implement **row-level multitenancy** using Spring Boot. Each object in the application contains a field called `tenantId` to segregate data by tenants. The repository also includes an advanced implementation combining **JWT (JSON Web Token)** authentication with multitenancy, available in the branch `multitenancy-JWT-Combination`.
+This repository demonstrates how to implement **row-level multitenancy** in a Spring Boot application. Each object in the application contains a `tenantId` field to segregate data by tenants. An advanced implementation combining **JWT (JSON Web Token)** authentication with multitenancy is available in the `multitenancy-JWT-Combination` branch.
 
 ---
 
 ## Table of Contents
 
 - [Overview](#overview)
-- [Branches](#branches)
-  - [Main Branch](#main-branch)
-  - [multitenancy-JWT-Combination Branch](#multitenancy-jwt-combination-branch)
+- [Repository Structure](#repository-structure)
 - [Technologies Used](#technologies-used)
 - [Setup and Run](#setup-and-run)
 - [Features](#features)
@@ -21,26 +19,30 @@ This repository demonstrates how to implement **row-level multitenancy** using S
 
 ## Overview
 
-**Multitenancy** allows multiple tenants (e.g., organizations or users) to share a single application instance while maintaining data isolation. This project demonstrates how to implement row-level multitenancy where each database entity includes a `tenantId` field to identify the associated tenant.
-
-In the advanced branch (`multitenancy-JWT-Combination`), **JWT authentication** is integrated with multitenancy. Upon logging in, the user receives a JWT containing their `tenantId`, ensuring requests are processed securely within the tenant's scope.
+Multitenancy ensures that multiple tenants (e.g., organizations or users) can share the same application instance while maintaining strict data isolation. This repository provides:
+1. A basic implementation of **row-level multitenancy**, where queries filter data by the `tenantId` field.
+2. An advanced implementation integrating **JWT authentication**, where the `tenantId` is embedded in the JWT and used to scope all operations securely.
 
 ---
 
-## Branches
+## Repository Structure
 
-### Main Branch
+### Branches
 
-The main branch provides a basic implementation of **row-level multitenancy**. It includes:
-- Entity design with `tenantId` as a mandatory field.
-- Query filtering based on `tenantId` to enforce data isolation.
+- **`main`**: Demonstrates the basic implementation of row-level multitenancy.
+- **`multitenancy-JWT-Combination`**: An advanced implementation combining row-level multitenancy with JWT authentication.
 
-### multitenancy-JWT-Combination Branch
+### Key Files and Directories
 
-This branch builds on the main branch by integrating **JWT authentication**:
-- Users log in to retrieve a JWT containing their `tenantId`.
-- Each request is authenticated using the token, ensuring actions are scoped to the correct tenant.
-- Middleware and interceptors automatically inject `tenantId` into queries based on the JWT.
+- **`src/main/java`**:
+  - `com.example.multitenant`: Main application code.
+  - `config`: Configuration files for multitenancy and JWT integration.
+  - `controllers`: REST API controllers for testing and demonstration.
+  - `services`: Service layer implementing the core logic.
+  - `entities`: JPA entities with `tenantId` fields.
+  - `repositories`: JPA repositories for database interactions.
+- **`application.yml`**: Configuration file for database and other properties.
+- **`README.md`**: This file.
 
 ---
 
@@ -51,7 +53,7 @@ This branch builds on the main branch by integrating **JWT authentication**:
   - Spring Security for authentication
   - Spring Data JPA for database interaction
 - **JWT**: Token-based authentication
-- **H2/PostgreSQL/MySQL**: Database options (easily configurable)
+- **H2/PostgreSQL/MySQL**: Database options (configurable)
 - **Maven**: Dependency management
 
 ---
@@ -62,11 +64,11 @@ This branch builds on the main branch by integrating **JWT authentication**:
 
 1. Java 17 or later installed.
 2. Maven installed.
-3. A database (H2 in-memory by default; others can be configured in `application.yml`).
+3. A database (H2 in-memory by default; others configurable in `application.yml`).
 
 ### Steps to Run
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/multitenancy-demo.git
-   cd multitenancy-demo
+   git clone https://github.com/RamiKhawaly/multitenant.git
+   cd multitenant
