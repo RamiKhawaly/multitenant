@@ -10,10 +10,6 @@ This repository demonstrates how to implement **row-level multitenancy** in a Sp
 - [Repository Structure](#repository-structure)
 - [Technologies Used](#technologies-used)
 - [Setup and Run](#setup-and-run)
-- [Features](#features)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
